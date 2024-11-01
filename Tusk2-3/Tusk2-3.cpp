@@ -48,7 +48,7 @@ User inputUser() {
 void displayUser(const User& user) {
     cout << "Ім'я: " << user.firstName << endl;
     cout << "Прізвище: " << user.lastName << endl;
-    cout << "Вік: " << user.age << endl;
+    cout << "Вік людини: " << user.age << endl;
     cout << "Студент: " << (user.isStudent ? "Так" : "Ні") << endl;
 }
 
