@@ -20,8 +20,24 @@ User inputUser() {
     cout << "Введіть прізвище: ";
     cin >> user.lastName;
 
-    cout << "Введіть вік: ";
-    cin >> user.age;
+
+    while (true) {
+        cout << "Введіть вік: ";
+        cin >> user.age;
+
+        // Перевірка, чи введено ціле число
+        if (cin.fail()) {
+            cout << "Помилка: введіть ціле число.\n";
+            cin.clear(); // Скидаємо стан помилки
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ігноруємо залишки вводу
+        }
+        else if (user.age < 0) {
+            cout << "Помилка: вік не може бути від'ємним.\n";
+        }
+        else {
+            break; // Вихід з циклу, якщо ввід коректний
+        }
+    }
 
     char isStudentChar;
 
